@@ -20,7 +20,7 @@ if function f can't be computed, return None
 def f_None(f,x):
     try:
         return f(x)
-    except:
+    except Exception:
         return None
 
 """
