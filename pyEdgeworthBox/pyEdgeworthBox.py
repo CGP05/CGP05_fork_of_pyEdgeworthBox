@@ -46,13 +46,13 @@ def _(f,*x):
         else:
             return out
     except ZeroDivisionError:
-        l = len(x)
-        eps = abs(f(*[1e-02]*l) - f(*[1e-04]*l))
+        L = len(x)
+        eps = abs(f(*[1e-02]*L) - f(*[1e-04]*L))
         # if converges
-        if abs(f(*[1e-04]*l) - f(*[1e-06]*l)) < eps and abs(f(*[1e-06]*l)-f(*[1e-08 ]*l)) < eps:
-            return f(*[1e-10]*l)
+        if abs(f(*[1e-04]*L) - f(*[1e-06]*L)) < eps and abs(f(*[1e-06]*L)-f(*[1e-08 ]*L)) < eps:
+            return f(*[1e-10]*L)
         else:
-            return sign(f(*[1e-10]*l)) * float("inf")
+            return sign(f(*[1e-10]*L)) * float("inf")
 
 """
 produces the array of the first items of the element of the array
