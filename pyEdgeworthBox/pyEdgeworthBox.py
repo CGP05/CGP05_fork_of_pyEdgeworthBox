@@ -131,8 +131,8 @@ def prime(f,dt=10e-3):
 Marginal rate of substitution of a utility function u(.)
 """
 def MRS(u):
-    u_x=lambda x,y: prime(lambda z: u(z,y))(x)
-    u_y=lambda x,y: prime(lambda z: u(x,z))(y)
+    def u_x=lambda x,y: prime(lambda z: u(z,y))(x)
+    def u_y=lambda x,y: prime(lambda z: u(x,z))(y)
     return lambda x,y: u_x(x,y)/u_y(x,y)
 
 """
